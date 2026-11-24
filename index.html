@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#326b58">
+  <meta name="description" content="VisionJudge 视觉权利工作台：个人作品对比、AI 团队素材合规检查与检测资料留档。">
+  <title>比赛评委版 · VisionJudge · 视觉权利工作台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23326b58'/%3E%3Cpath d='m11 13 9 16 9-16M15 13l5 9 5-9' fill='none' stroke='%23fff' stroke-width='2.6'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="工作台导航"></aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb"><span class="workspace-label">评委演示空间</span><span class="slash">/</span><span id="crumb">对比检测</span></div>
+        <button class="text-button" data-action="standards"><span class="help-symbol">?</span>使用与评判标准</button>
+<form action="/logout" method="post"><button class="text-button" type="submit">退出评委账号</button></form>
+      </header>
+      <main id="main" tabindex="-1"><div class="loading-state"><span class="spinner"></span><p>正在打开工作空间…</p></div></main>
+      <footer class="workspace-footer"><span class="footer-mark">VJ</span> 为创作保留依据 <span class="footer-divider"></span> VisionJudge 2.2</footer>
+    </div>
+  </div>
+  <dialog id="folder-dialog" class="modal" aria-labelledby="folder-title"></dialog>
+  <dialog id="help-dialog" class="modal help-modal" aria-labelledby="help-title"></dialog>
+  <dialog id="review-dialog" class="modal" aria-labelledby="review-title-label"></dialog>
+  <dialog id="busy-dialog" class="busy-modal" aria-labelledby="busy-title">
+    <div class="scan-orbit"><span class="spinner"></span></div><span class="eyebrow">VISIONJUDGE ANALYSIS</span>
+    <h2 id="busy-title">正在寻找视觉线索</h2><p id="busy-detail" aria-live="polite">正在读取图片…</p>
+    <div class="scan-steps"><span id="step-read">读取图片</span><i></i><span id="step-analyze">视觉比对</span><i></i><span id="step-save">报告归档</span></div>
+    <p class="small muted">图片在本机处理，完成后自动保存到所选文件夹。</p>
+  </dialog>
+
+  <!-- 全局 AI 法律助手 -->
+<button id="global-chat-toggle" class="global-chat-toggle" aria-label="打开 AI 法律助手">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+</button>
+<div id="global-chat-panel" class="global-chat-panel" aria-hidden="true">
+  <!-- 内容由 app.js 动态渲染 -->
+</div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
